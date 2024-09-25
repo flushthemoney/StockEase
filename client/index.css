@@ -45,16 +45,17 @@ nav {
   transform-origin: left;
   transform: scaleX(1);
 }
+
 #navbar li:hover {
   cursor: pointer;
 }
+
 main {
   height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.8rem;
 }
 
 h1 {
