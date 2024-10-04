@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Register</title>
+    <link rel="stylesheet" href="../styles/login.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Register</h2>
+
+      <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="confirm-password">Confirm Password</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          required
+        />
+
+        <label>
+          <input
+            type="checkbox"
+            id="terms"
+            name="terms"
+            id="checkbox"
+            required
+          />
+          <p>I accept the <a href="#">terms and conditions</a></p>
+        </label>
+
+        <input type="submit" id="button" value="Register" />
+      </form>
+    </div>
+  </body>
+</html>
