@@ -78,3 +78,16 @@ a {
   text-decoration: none;
   color: black;
 }
+
+#bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  justify-content: end;
+}
+
+#bottom-nav li {
+  padding: 0.5rem 0.5rem;
+  color: #080808;
+}
