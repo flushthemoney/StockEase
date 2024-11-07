@@ -1,27 +1,59 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>Contact Us</title>
     <link rel="stylesheet" href="../styles/login.css" />
+    <script>
+      function validateContactForm() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (name.trim() === "") {
+          alert("Name cannot be empty.");
+          return false;
+        }
+
+        if (!emailRegex.test(email)) {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+
+        if (subject.trim() === "") {
+          alert("Subject cannot be empty.");
+          return false;
+        }
+
+        if (message.trim().length < 15) {
+          alert("Message should be at least 15 characters long.");
+          return false;
+        }
+        alert("Form submitted successfully!");
+        window.location.href = "../index.html";
+        return false;
+      }
+    </script>
   </head>
 
   <body>
     <div class="container">
       <h2>Contact Us</h2>
 
-      <form>
+      <form onsubmit="return validateContactForm();">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" id="name" name="name" />
 
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" />
 
         <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" required />
+        <input type="text" id="subject" name="subject" />
 
         <label for="message">Message</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
+        <textarea id="message" name="message" rows="6"></textarea>
 
         <input type="submit" id="button" value="Send Message" />
       </form>

@@ -1,24 +1,57 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>Feedback</title>
     <link rel="stylesheet" href="../styles/login.css" />
+    <script>
+      function validateFeedbackForm() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const rating = document.getElementById("rating").value;
+        const comments = document.getElementById("comments").value;
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (name.trim() === "") {
+          alert("Name cannot be empty.");
+          return false;
+        }
+
+        if (!emailRegex.test(email)) {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+
+        if (!rating) {
+          alert("Please select a rating.");
+          return false;
+        }
+
+        if (comments.trim().length < 10) {
+          alert("Comments should be at least 10 characters long.");
+          return false;
+        }
+        alert("Feedback submitted successfully!");
+        window.location.href = "../index.html";
+        return false;
+      }
+    </script>
   </head>
 
   <body>
     <div class="container">
       <h2>Feedback</h2>
 
-      <form>
+      <form onsubmit="return validateFeedbackForm();">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" id="name" name="name" />
 
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" />
 
         <label for="rating">Rating</label>
-        <select id="rating" name="rating" required>
+        <select id="rating" name="rating">
+          <option value="">Select a rating</option>
           <option value="1">1 - Very Poor</option>
           <option value="2">2 - Poor</option>
           <option value="3">3 - Average</option>
@@ -27,7 +60,7 @@
         </select>
 
         <label for="comments">Comments</label>
-        <textarea id="comments" name="comments" rows="4" required></textarea>
+        <textarea id="comments" name="comments" rows="4"></textarea>
 
         <input type="submit" id="button" value="Submit Feedback" />
       </form>

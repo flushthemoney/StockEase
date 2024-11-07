@@ -3,16 +3,36 @@
   <head>
     <title>Login Form</title>
     <link rel="stylesheet" href="../styles/login.css" />
+    <script>
+      function validateLoginForm() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (username.trim() === "") {
+          alert("Username cannot be empty.");
+          return false;
+        }
+
+        if (password.trim() === "") {
+          alert("Password cannot be empty.");
+          return false;
+        }
+
+        alert("Logged in successfully!");
+        window.location.href = "../pages/app.html";
+        return false;
+      }
+    </script>
   </head>
   <body>
     <div class="container">
       <h2>Login</h2>
-      <form>
+      <form onsubmit="return validateLoginForm();">
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" required />
+        <input type="text" id="username" name="username" />
 
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required />
+        <input type="password" id="password" name="password" />
 
         <input type="submit" id="button" value="Login" />
       </form>

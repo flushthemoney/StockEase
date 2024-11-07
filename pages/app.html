@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory</title>
+    <link rel="stylesheet" href="../styles/app.css" />
+  </head>
+  <body>
+    <nav>
+      <img src="../assets/logo.png" alt="" />
+      <h1>StockEase</h1>
+      <a href="../index.html">Logout</a>
+    </nav>
+
+    <div class="inventory-form">
+      <input type="text" id="itemName" placeholder="Item Name" />
+      <input type="number" id="itemQuantity" placeholder="Quantity" />
+      <input type="number" id="itemPrice" placeholder="Price" />
+      <button onclick="addItem()">Add Item</button>
+    </div>
+    <div>
+      <table id="inventoryTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="inventoryBody"></tbody>
+      </table>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
